@@ -1,2 +1,5 @@
 name = input('请输入你的名字:')
 print(name)
+names = ('dada','lisi','wangwu',liuyi')
+for name in names:
+print(name)
