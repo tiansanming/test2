@@ -9,31 +9,32 @@ class Test_error_login:
 
         print('\n用例 C001001: 不输入账号登录')
 
+        # 添加allure步骤 参考文章 https://www.cnblogs.com/bigbox/p/13132513.html
         # 实例化浏览器 如果为空就是是用的项目根目录的Chrome驱动
-        allure.step("1 实例化浏览器 如果为空就是是用的项目根目录的Chrome驱动")
-        borwser = webdriver.Chrome("E:\soft\driver\chromedriver_win32\chromedriver.exe")
+        with allure.step("1 实例化浏览器 如果为空就是是用的项目根目录的Chrome驱动"):
+            borwser = webdriver.Chrome("E:\soft\driver\chromedriver_win32\chromedriver.exe")
         # 请求网址
-        allure.step("2 请求网址")
-        borwser.get('http://test.lemonban.com/ningmengban/app/login/login.html')
+        with allure.step("2 请求网址"):
+            borwser.get('http://test.lemonban.com/ningmengban/app/login/login.html')
         # 隐式等待 每隔半秒请求
-        allure.step("3 隐式等待 每隔半秒请求")
-        borwser.implicitly_wait(10)
+        with allure.step("3 隐式等待 每隔半秒请求"):
+            borwser.implicitly_wait(10)
         # 窗口放大
-        allure.step("4 窗口放大")
-        borwser.maximize_window()
+        with allure.step("4 窗口放大"):
+            borwser.maximize_window()
         # 点击密码框
-        allure.step("5 点击密码框")
-        borwser.find_element_by_id('password').click()
-        borwser.find_element_by_id('password').send_keys('zzc222736')
-        time.sleep(2)
+        with allure.step("5 点击密码框"):
+            borwser.find_element_by_id('password').click()
+            borwser.find_element_by_id('password').send_keys('zzc222736')
+            time.sleep(2)
         # 点击登陆
-        allure.step("6 点击登陆")
-        borwser.find_element_by_id('login-button').click()
-        time.sleep(2)
-        tes = borwser.find_element_by_xpath('//*[@id="myform"]/div[4]/p').text
-        print(tes)
-        allure.step("7 校验")
-        assert tes == '用户名不能为空。'
+        with allure.step("6 点击登陆"):
+            borwser.find_element_by_id('login-button').click()
+            time.sleep(2)
+            tes = borwser.find_element_by_xpath('//*[@id="myform"]/div[4]/p').text
+            print(tes)
+        with allure.step("7 校验"):
+            assert tes == '用户名不能为空。'
 
     def test_C001002(self):
         print('\n用例 C001002: 正确的账号不输入密码')
