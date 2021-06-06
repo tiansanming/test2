@@ -1,3 +1,5 @@
 from demo03 import *
-print(max(2,7))
-print(max3(2,7))
+list = [1,2,3,4]
+print(aa(list))
+list1 = [34,45,323,56,4]
+print(aa(list1))
