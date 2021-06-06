@@ -21,3 +21,9 @@ def test_func_2():
 	src = -1
 	expect = 0
 	assert func(src) == expect
+
+
+def test_func_3():
+	src = 5
+	expect = 7
+	assert func(src) == expect

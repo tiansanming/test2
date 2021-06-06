@@ -7,9 +7,10 @@ shou.click()
 py = driver.find_element_by_xpath('//*[@id="floor-nav_62"]/div/div/div[2]/ul/li[1]/a')
 sleep(10)
 py.click()
-sleep(15)
-tui = driver.find_element_by_xpath('//*[@id="csdn-nav-second"]/div/div/ul/li[1]/a')
 sleep(10)
-tui.click()
+quit = driver.find_element_by_xpath('//*[@id="csdn-nav-second"]/div/div/ul/li[1]/a')
+sleep(10)
+quit.click()
+
 
 
