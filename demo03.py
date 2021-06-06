@@ -1,3 +1,4 @@
+import random
 #1. 先定一个函数，
 def max(a, b):
     print("a== " + str(a), "b== " + str(b))
@@ -44,3 +45,15 @@ def aa(list):
         sum = sum * x
         sum1 = sum1 + x
     return sum,sum1
+def bb(a,b):
+    ad = a / b
+    return ad
+def dd(len):
+    a = 0
+    str1 = '410225'
+    while a < len - 6:
+        str1 = str1 + str(random.randint(0,9))
+        a = a + 1
+    return str1
+
+
